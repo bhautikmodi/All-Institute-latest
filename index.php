@@ -18,7 +18,8 @@ include_once "allfunction.php";
 	<!-- <link rel="stylesheet" href="css/font-awesome.min.css">
 	<link type="text/css" media="screen" rel="stylesheet" href="css/awwwards.css"/>
 	<link type="text/css" media="screen" rel="stylesheet" href="css/fastfonts.css"/> -->
-
+	<link rel="stylesheet" href="css_new/style.css">
+	<link rel="stylesheet" href="css_new/hover-min.css">
 	<link rel="stylesheet" href="css_new/all_ins.css">
 	<link rel="stylesheet" href="css_new/font-awesome.min.css">
 	<!-- <link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css"/>
@@ -66,7 +67,7 @@ include_once "allfunction.php";
 	<link rel='stylesheet' id='bones-stylesheet-css' href='css/style.css' type='text/css' media='all'/>
 	<!-- <link rel='stylesheet' id='bones-icons-css' href='css/icons.css' type='text/css' media='all'/> -->
 	<link rel='stylesheet' id='googleFonts-css' href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' type='text/css' media='all'/>
-
+	
 </head>
 
 <body class="home page page-id-2 page-template page-template-page-home page-template-page-home-php desktop">
@@ -227,8 +228,12 @@ include_once "allfunction.php";
 				<script type='text/javascript' src='js/scripts.min.js'></script> -->
 
 				<script src='https://www.google.com/recaptcha/api.js'></script>
-
-
+				<script src="js_new/wow.min.js"></script>
+				<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+				<script src="js_new/bootstrap.min.js" type="text/javascript"></script>
+				<script src="js_new/jquery.meanmenu.min.js" type="text/javascript"></script>
+				<script src="js_new/jquery.scrollUp.min.js" type="text/javascript"></script>
+				<script src="js_new/isotope.pkgd.min.js" type="text/javascript"></script> 
 
 
 

@@ -1038,7 +1038,7 @@ $('#mobile-nav-button').on('click',function(){
 <!--<script type='text/javascript' src='js/scripts.min.js'></script> -->
 <!--<script type='text/javascript' src='js/jquery.sticky-kit.js'></script> -->
 <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="js_new/bootstrap.min.js" type="text/javascript"></script> 
+<script src="js_new/bootstrap.min.js" type="text/javascript"></script> 
 <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 <!--<script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>-->
  
