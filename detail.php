@@ -426,16 +426,18 @@ h3.sidebar-title
 						if($data['CourseID']=='')
 						{
 							?>
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 all">
-                        
-                            <div class="single-item-wrapper single-detail">
-                            	<div class="nocourse">
-                                    <center class="nocourse2">   No Course are available.</center>
+							
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all">
+								<div class="courses-box1">
+									<div class="single-item-wrapper">
+										<div class="nocourse" >
+											<center class="nocourse2">No courses are available.</center>
+											
+										
+										</div>
 									</div>
-                                
-                            </div>
-                       
-                    </div> 
+								</div> 
+							</div>
 					<br><br><br><br><br><br><br><br><br>
 					<?php
 						}
@@ -624,7 +626,7 @@ h3.sidebar-title
                                                     <ul>
                                                         <li>
                                                             <div class="skilled-lecturers-img col-md-3 col-sm-4 col-xs-4">
-                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/upload/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
+                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
                                                             </div>
                                                             <div class="skilled-lecturers-content col-md-6 col-sm-8 col-xs-8">
                                                                 <h4><a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><?php  echo $datainstructor1['InsName'];?></a></h4>
@@ -789,12 +791,22 @@ h3.sidebar-title
 						}else
 						{?>
 					
-                            <div class="single-item-wrapper" >
-                            	<div class="nocourse">
-                                    <center class="nocourse2">No Courses are available</center>
+						<div class="container">
+								<div class="row">
+									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+						
+										<div class="courses-box1">
+											<div class="single-item-wrapper">
+												<div class="nocourse" >
+													<center class="nocourse2">No courses are available.</center>
+												</div>
+												
+											</div>
+										</div>
 									</div>
-                                
-                            </div>
+												
+								</div>
+							</div>
                       
                     
                         <?php 
