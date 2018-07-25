@@ -827,7 +827,7 @@ img.wp-smiley, img.emoji {
 										   $endDate = date('m/d/Y', strtotime($data['EnrStartDate']));
 										 echo  $endDate. '&nbsp;&nbsp;-&nbsp;';  
 										  ?>
-												&nbsp;-&nbsp;
+										
 										  <?php
 										  echo $endDate = date('m/d/Y', strtotime($data['EnrEndDate']));
 										   ?>
