@@ -301,7 +301,7 @@ $(".navbar-toggle").click(function() {
 <div class="clearfix"></div>
 								<a href='javascript:ref();' style="margin-top:5px;    float: left;
 margin-right: 0;">
-			<h3 style="margin-top: 0;"> Refresh</h3>
+			<h3 style="margin-top: 0; font-weight: 600;"> Refresh</h3>
 			</a><div class="clearfix"></div>
 
 								<script language="javascript">
