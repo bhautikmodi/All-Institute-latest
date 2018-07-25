@@ -624,7 +624,7 @@ h3.sidebar-title
                                                     <ul>
                                                         <li>
                                                             <div class="skilled-lecturers-img col-md-3 col-sm-4 col-xs-4">
-                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
+                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/upload/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
                                                             </div>
                                                             <div class="skilled-lecturers-content col-md-6 col-sm-8 col-xs-8">
                                                                 <h4><a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><?php  echo $datainstructor1['InsName'];?></a></h4>

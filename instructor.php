@@ -373,7 +373,7 @@ input.address
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="lecturers-contact-info">
-                            <img src="admin/instructor/<?php  echo $data['InsImg'];?>" class="img-responsive" alt="team">
+                            <img src="admin/upload/instructor/<?php  echo $data['InsImg'];?>" class="img-responsive" alt="team">
                             <h2><?php  //echo $data['InsName'];?></h2>
                             
                             
