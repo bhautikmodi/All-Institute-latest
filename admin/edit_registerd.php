@@ -48,8 +48,11 @@ $MODE=MODE;
             
 
             // <!-- <script>location.replace('view_Registration.php');</script> -->
-            echo "<script>window.location.replace('edit_registerd.php?RegisterId=$demo?check=0');</script>";
-
+            //echo "<script>window.location.replace('edit_registerd.php?RegisterId=$demo?check=0');</script>";
+            session_start();
+        
+            $_SESSION['check']=1;
+            echo "<script>window.location.replace('view_Registration.php');</script>";
             
         } else {
             

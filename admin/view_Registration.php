@@ -13,10 +13,14 @@ $query = "SELECT * FROM `tblregister` ";
 $result = mysql_query($query)or die(mysql_error());
 ?>
 
-
+<center><div class="alert alert-success" id="update_rec" style="width:100%; margin:0px 0px 10px 0px; display:none;">
+									<strong>Your record was updated successfully!</strong>
+								</div>	  
+						</center>  
 <div class="panel panel-default">
 <div class="<?php echo $MODE; ?>"></div>
-    <div class="panel-heading">                                
+    <div class="panel-heading">         
+                       
         <h3 class="panel-title"> <b>List of registration for all courses</b> </h3>   
 
         <div class="btn-group pull-right">
@@ -140,7 +144,37 @@ include 'footer.php';
 <script src="js/jquery.bvalidator-yc.js"></script>
 
 
+<script>
+									<?php
+					if(isset($_SESSION['check']))
+					{
 
+						?>
+					var check = <?php echo $_SESSION['check'];?> 
+						
+						<?php
+						unset($_SESSION['check']);
+					}
+					?>
+					$(document).ready(function () {
+						if(check==1) {
+							//if(cid){
+							$('#update_rec').css('display','block');
+					
+						setTimeout(function() {
+							$('#update_rec').css('display','none');
+
+									var my_variable_name = window.location.href;
+							
+							var success = my_variable_name.replace("?check=0", '');
+							
+							//window.location.replace(success);
+
+						}, 10000);
+					}
+					});
+					
+</script>
 
 
 
