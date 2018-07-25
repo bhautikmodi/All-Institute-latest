@@ -180,6 +180,12 @@ h1, .h1 {
     position: relative;
 }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+    .owl-item.cloned{display:none !important;}
+}
+
 @media only screen and (max-width:767px){
 	div.align-right a.aere-button{ padding: 5px 10px;}
 	header#header_new .navbar-inverse .navbar-toggle .icon-bar {background-color: #000!important;}
@@ -209,6 +215,7 @@ h1, .h1 {
     padding: 0;
     text-align: center;
 }
+    .page-slider {opacity: 1;}
 }
 @media screen and (max-width:500px){
 	p{font-size: 13px!important;}
@@ -216,4 +223,8 @@ h1, .h1 {
 }
 @media screen and (max-width:480px){
 	.owl-carousel .owl-item img{height: auto!important;}
+}
+
+@media screen and (max-width:479px){ 
+    .owl-item.cloned{display:none !important;}
 }
