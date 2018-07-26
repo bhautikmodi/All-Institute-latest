@@ -793,17 +793,17 @@ h3.sidebar-title
 					
 						<div class="container">
 								<div class="row">
-									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+									
 						
-										<div class="courses-box1">
-											<div class="single-item-wrapper">
+										
+											
 												<div class="nocourse" >
 													<center class="nocourse2">No courses are available.</center>
 												</div>
 												
-											</div>
-										</div>
-									</div>
+											
+										
+									
 												
 								</div>
 							</div>
