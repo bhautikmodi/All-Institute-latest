@@ -547,12 +547,12 @@ input.address
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="firstname">First name</label>
                               <br>
-                              <input maxlength="50" pattern="[a-zA-Z\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
+                              <input maxlength="50" pattern="[a-zA-Z.'\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
 							  id="firstname" type="text" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="lastname">Last name</label>
-                              <input maxlength="50" pattern="[a-zA-Z\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                              <input maxlength="50" pattern="[a-zA-Z.'\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="email">Email</label>
