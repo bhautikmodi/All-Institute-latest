@@ -311,7 +311,7 @@ if(isset($_REQUEST['otpbtn']))
 		if($upd)
 		{		
 		    $cid=$_REQUEST['cid'];
-			$_SESSION['check']=2;
+			$_SESSION['check']=1;
 	      echo "<script> window.location.href='registration.php?cid=$cid';</script>"; 
 	
 		}

@@ -547,12 +547,12 @@ input.address
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="firstname">First name</label>
                               <br>
-                              <input maxlength="50" pattern="[a-zA-Z.'\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
+                              <input maxlength="100" pattern="[a-zA-Z`~!@#$%^&*()',./?|\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
 							  id="firstname" type="text" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="lastname">Last name</label>
-                              <input maxlength="50" pattern="[a-zA-Z.'\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                              <input maxlength="100" pattern="[a-zA-Z`~!@#$%^&*()',./?|\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="email">Email</label>
@@ -564,7 +564,7 @@ input.address
                             </div>
 							 <div class="form-group col-md-12">
                               <label class="sr-only" for="address">Address</label>
-                              <input name="address" maxlength="200" placeholder="What's your address?" class="address form-control" id="address" type="text" required oninvalid="this.setCustomValidity('Please enter your address')" oninput="setCustomValidity('')">
+                              <input name="address" maxlength="250" pattern="[a-zA-Z0-9`~!@#$%^&*()',./?|\-\s]+" placeholder="What's your address?" class="address form-control" id="address" type="text" required oninvalid="this.setCustomValidity('Please enter your address')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="pass">Password</label>
@@ -748,20 +748,17 @@ $date=date('Y-m-d');
 					}else
 						{?>
 					
-					<div class="container">
-                			<div class="row">
-                    			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-					
-									<div class="courses-box1">
-										<div class="single-item-wrapper">
-											<div class="nocourse" >
-												<center class="nocourse2">No courses are available.</center>
-											</div>
-											
+						<div class="container">
+							<div class="row">
+									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+										<div class="courses-box1">
+											<div class="single-item-wrapper">
+												<div class="nocourse" >
+													<center class="nocourse2">No courses are available.</center>
+												</div>
 										</div>
 									</div>
 								</div>
-											
 							</div>
 						</div>
                       
@@ -1289,7 +1286,7 @@ $(".about-the-quickfacts").stick_in_parent({
 <!-- Plugins js --> 
 <!-- <script src="js_new/plugins.js" type="text/javascript"></script>  -->
 <!-- Bootstrap js --> 
-<script src="js_new/bootstrap.min.js" type="text/javascript"></script> 
+<!-- <script src="js_new/bootstrap.min.js" type="text/javascript"></script>  -->
 <!-- WOW JS --> 
 <script src="js_new/wow.min.js"></script> 
 <!-- Nivo slider js --> 

@@ -57,7 +57,7 @@ $datainstructor=mysql_fetch_array($instructordata);
 <link type="text/css" media="screen" rel="stylesheet" href="css/awwwards.css" />
 <link type="text/css" media="screen" rel="stylesheet" href="css/fastfonts.css" /> -->
 <script type='text/javascript'  src="js/jquery-2.1.1.min.js"></script>
-<script src="js_new/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="js_new/bootstrap.min.js" type="text/javascript"></script> -->
 
 <link rel="stylesheet" href="css_new/all_ins.css">	
 	 <!-- Normalize CSS -->
@@ -791,22 +791,19 @@ h3.sidebar-title
 						}else
 						{?>
 					
-						<div class="container">
-								<div class="row">
-									
-						
-										
-											
-												<div class="nocourse" >
-													<center class="nocourse2">No courses are available.</center>
+							<div class="container">
+									<div class="row">
+											<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+												<div class="courses-box1">
+													<div class="single-item-wrapper">
+														<div class="nocourse" >
+															<center class="nocourse2">No courses are available.</center>
+														</div>
 												</div>
-												
-											
-										
-									
-												
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
                       
                     
                         <?php 
