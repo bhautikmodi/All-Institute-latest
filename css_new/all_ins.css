@@ -1,6 +1,73 @@
 /* css for index.php start */
 .fontcolor{color: #c00808;}
 
+
+error-container {
+    width: 500px;
+    margin: 50px auto 0px;
+}
+
+.error-code {
+    /*float: left;*/
+    width: 100%;
+    font-size: 75px !important;
+    line-height: 70px;
+    /*text-align: center;*/
+    color: #000 !important;
+    font-weight: 300;
+	font-family: "Avenir LT W01_55 Roman1475520", "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif";
+}
+
+.error-text {
+    /*float: left;*/
+    width: 100%;
+    margin-top: 20px;
+    font-size: 26px !important;
+    line-height: 30px;
+    /*text-transform: uppercase;*/
+    color: #c00808 !important;
+    /*text-align: center;*/
+    font-weight: 400;
+	font-family: "GothamNarrow-Medium";
+}
+
+.error-subtext {
+    /*float: left;*/
+    width: 100%;
+    margin: 30px 0px 10px;
+    font-size: 25px !important;
+    line-height: 20px;
+    color: #000;
+    /*text-align: center;*/
+    font-weight: 400;
+	font-family: "GothamNarrow-Medium";
+	text-align: center;
+}
+
+.error-page .list-unstyled li {
+	font-size: 15px;
+	text-align: center;
+}
+
+.error-page .list-unstyled li a {
+	color: #c00808;
+	text-align: center;
+}
+
+.error-page .list-unstyled li a:hover {
+	text-decoration: none;
+	text-align: center;
+}
+
+.error-container .error-actions {
+	text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+	font-family: "GothamNarrow-Book";
+}
+
+
 .txtcenter{text-align:center;}
 
 /* css for index.php end */

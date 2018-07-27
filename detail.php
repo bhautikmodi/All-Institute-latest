@@ -425,9 +425,10 @@ h3.sidebar-title
 						
 						if($data['CourseID']=='')
 						{
+							echo "<script>window.location='404.php';</script>";
 							?>
 							
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all">
+							<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all">
 								<div class="courses-box1">
 									<div class="single-item-wrapper">
 										<div class="nocourse" >
@@ -437,7 +438,7 @@ h3.sidebar-title
 										</div>
 									</div>
 								</div> 
-							</div>
+							</div> -->
 					<br><br><br><br><br><br><br><br><br>
 					<?php
 						}

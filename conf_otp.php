@@ -40,24 +40,7 @@
 
 
 
-<!-- <script>
-$(document).ready(function () {
-    if(window.location.href.indexOf("check=1") > -1) {
-        $('#otp_email').css('display','block');
-   
-     setTimeout(function() {
-        $('#otp_email').css('display','none');
 
-				var my_variable_name = window.location.href;
-        
-        var success = my_variable_name.replace("?check=1", '');
-        
-        window.location.replace(success);
-
-    }, 10000);
-}
-});
-</script>   -->
 
 <?php 
 
@@ -266,24 +249,15 @@ line-height: 1.3333333;
 									</header>
 									
 	</div>								
-	<!-- NEW CODE HERE  -->								
+								
 	
 									
-        <!-- Inner Page Banner Area Start Here -->
+      
         <div class="inner-page-banner-area" style="background-image: url('image/image1.jpg');">
-            <!--<div class="container">
-                <div class="pagination-area">
-                  
-                    <ul>
-                        <li><a href="#">Home</a> -</li>
-                        <li>Courses</li>
-                    </ul>
-                </div>
-            </div>-->
+           
         </div>
 	
-        <!-- Inner Page Banner Area End Here -->
-        <!-- Courses Page 2 Area Start Here -->
+       
 		
 		<?php
 session_start();
@@ -360,17 +334,10 @@ $(document).ready(function () {
 }
 });
 
-//      $( document ).ready(function() {
-//         $('#otp_true').attr('style','display:none;');  
-// 		setTimeout(function() {
-    
-// 		$('#mail_wrong').fadeOut('hide');
-// 		}, 10000);
-// });
      
 	</script>
 <?php
-		// echo "<script>alert('Please check your otp!'); </script>"; 
+		
 	}
 }
 ?>
@@ -383,412 +350,43 @@ $(document).ready(function () {
 				                	    <b> Please check your Email Id for verification code.</b>
 								    </div>
 								
-					     <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Verification code  <i class="fa fa-pencil pull-right"></i></h3>
-                                                </div>
+					                <div class="form-top">
+                                        <div class="form-top-left">
+                                            <h3>Verification code  <i class="fa fa-pencil pull-right"></i></h3>
+                                        </div>
 												
                                                 <p class="clearfix">Please enter code for verification:</p>
                                                 <div class="form-top-divider"></div>
 												
-													</div>
+									</div>
 					   							
 										
 												
-			<div class="form-bottom">
-				<form name="f1" id="signupbtn"  method="post" class="registration-form">
-														
-					<input type="hidden" name="action" value="signUp" />
-															
-						<div class="form-group">
-							<label class="sr-only" for="firstname">Password</label>
-																<br>
-							<input name="otp" placeholder="Enter verification code" class="firstname form-control"  type="text" required oninvalid="this.setCustomValidity('Please enter the confirmation code you received')" oninput="setCustomValidity('')" minlength="4"  maxlength="5" pattern="[0-9]+"/>
-						</div>
-						
-						
-						<div class="form-group">
-							<button type="submit" class="btn" name="otpbtn">Verify</button>
-                                                                                                                            
-						</div>
-															
-                                                                                                                        
-					</form>
-			</div>
+                                    <div class="form-bottom">
+                                        <form name="f1" id="signupbtn"  method="post" class="registration-form">
+                                                                                
+                                            <input type="hidden" name="action" value="signUp" />
+                                                                                    
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="firstname">Password</label>
+                                                                                        <br>
+                                                    <input name="otp" placeholder="Enter verification code" class="firstname form-control"  type="text" required oninvalid="this.setCustomValidity('Please enter the confirmation code you received')" oninput="setCustomValidity('')" minlength="4"  maxlength="5" pattern="[0-9]+"/>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn" name="otpbtn">Verify</button>
+                                                                                                                                                    
+                                                </div>                                                                                                             
+                                        </form>
+                                    </div>
 					
 					   
                     </div>
                 </div>
-				<div class="row featuredContainer">
 				
-			
-										
-				
-                    				
-												
-											
-					
-											
-												
-											
-		
-            
-		
-		<!-- user Profile -->
-		<?php
-	session_start();
-	$reid=$_SESSION['RegisterId'];
-	if(isset($_SESSION['RegisterId']))
-	{
-		$res=mysql_query("SELECT  tblcourseregistered.createdOn,tblcourse.Title,tblcourse.CourseID,tblcourse.StartDate from tblcourseregistered INNER JOIN tblcourse on tblcourseregistered.CourseID=tblcourse.CourseID where tblcourseregistered.RegisterId='$reid'  ");
-		
-		$noofrec=mysql_num_rows($res);
-			if($noofrec>0)
-			{	 
-				while($data=mysql_fetch_array($res))
-				{
-											//print_r($data);
-											//exit;
-				?>										
-
-
-										
-				
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 user">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper" style="float:left">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-								  
-                                    <img class="img-responsive">
-									
-									<div style="height:180px;width:285px; background-color:lightgrey;padding:25px" >
-                                     <h style="font-size: 18px;font-weight: 500;text-align:justify ;line-height: 1.1;color:black !important;"><center style="padding-top:30px;"> <?php echo $data['Title'];?></center> </h>
-									</div>
-									 <a href="detail.php?cid=<?php echo $data['CourseID'];?>"><i class="logo" aria-hidden="true"></i>
-									  <div style="margin-top:0px;">Click for</div>
-									 <div style="margin-top:-25px;">detail</div>
-									 </a>
-
-                                </div>
-								
-                                <div class="courses-content-wrapper">
-                                    
-									
-                                   
-                                    <ul class="courses-info">
-                                       <li><?php echo $data['StartDate'];?>
-                                            <br><span> <b> StartDate </b></span></li>
-                                       
-									<li><?php echo $data['createdOn'];?>
-                                            <br><span> <b>Registeron</b></span></li>
-										</ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  						
-											
-												
-											
-		<?php
-			}
-		}
-		
-		else
-		{
-			?>
-			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 user">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper" style="float:left">
-                            	<div style="height:180px;width:1100px; background-color:lightgrey;padding:25px" >
-                                    <center style="font-size:24px;margin-top:40px;">   No Course Available..</center>
-									</div>
-                                
-                            </div>
-                        </div>
-                    </div> 
-		<?php	
-	    }	
-	}
-	
-		?>	
-			<!-- end user Profile -->
-			</div>			
-				</div>	
-                 <!--   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 cse mathematics medical">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/9.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">GMAT</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>3 Months
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>10 am - 11 am
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 diploma mathematics">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/10.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">IELTS</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>1 Year
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>09 am - 11 am
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 cse english medical">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/4.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">CSE</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>2 Months
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>02 pm - 04 pm
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 diploma english">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/5.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">Diploma</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>4 Months
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>08 am - 10 am
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 cse mathematics medical">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/6.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">Mathematics</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>1 Year
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>10 am - 12 pm
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mathematics english">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/7.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">Basic Philosopphy</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>3 Years
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>09 am - 11 am
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 diploma cse medical">
-                        <div class="courses-box1">
-                            <div class="single-item-wrapper">
-                                <div class="courses-img-wrapper hvr-bounce-to-bottom">
-                                    <img class="img-responsive" src="img_new/course/8.jpg" alt="courses">
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                </div>
-                                <div class="courses-content-wrapper">
-                                    <h3 class="item-title"><a href="#">GMAT</a></h3>
-                                    <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p>
-                                    <ul class="courses-info">
-                                        <li>8 Months
-                                            <br><span> Course</span></li>
-                                        <li>30
-                                            <br><span> Classes</span></li>
-                                        <li>05 pm - 08 pm
-                                            <br><span> Classes</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>		-->	
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-	<!-- NEW CODE END HERE  -->								
-
-									<!-- <section class="cf">
-										<div class="m-all t-all d-all table-responsive">
-											<ul class="nav nav-tabs">
-												<li class="active"><a href='allcourses.php'>All</a></li>
-												<li><a href='current.php'>Current</a></li>
-												<li><a href='upcoming.php'>Upcoming</a></li>
-												<li><a href='finished.php'>Previous</a></li>
-											</ul>
-											<table class="table table-bordered table-striped display" id="example" width="100%" cellspacing="0">
-                                                                                        <thead class="thead-inverse">
-																						<tr>
-                                                                                            <th width='400'>Title</th>
-                                                                                            <th>Start Enrollment Date</th>
-																							<th>End Enrollment Date</th>
-                                                                                            <th width='200'>Location</th>
-                                                                                            <th width='150'>Time</th>
-                                                                                            <th>Fees</th>
-																							<th>Status</th>
-                                                                                            <th>Detail</th>
-                                                                                        </tr>
-                                                                                        </thead>
-                                                                                        <tbody>
-											<?php
-												
-												
-											/*if(isset($_GET["page"]))
-												$page = (int)$_GET["page"];
-											else
-												$page = 1;
-
-											$setLimit = 3;
-											$pageLimit = ($page * $setLimit) - $setLimit; */
-											$cnd= " AND 1=1 ";
-											 $date=date('Y-m-d');
-											
-											//$res=mysql_query("SELECT * FROM tblcourse where IsStatus = 1 LIMIT ".$pageLimit." , ".$setLimit);
-											$res=mysql_query("SELECT * FROM tblcourse where IsStatus = 1 ")	;
-											$noofrec=mysql_num_rows($res);
-											if($noofrec>0){	 
-												while($data=mysql_fetch_array($res))
-												{
-												 
-												echo "<tr>";    echo "<td width='400'>".$data['Title']."</td>";
-												 
-												
-												 
-												$sdate = date_create($data['StartDate']);
-												$ssdate =date_format($sdate,'m/d/Y');
-            									echo "<td class='text-center'>".date_format($sdate,'m/d/Y')."</td>";
-												
-												$edate = date_create($data['EndDate']);
-												$eedate =date_format($edate,'m/d/Y');
-												echo "<td class='text-center'>".date_format($edate,'m/d/Y')."</td>";
-												 
-												echo "<td class='text-center' width='200'>".$data['Location']."</td>";
-												 
-												echo "<td class='text-center' width='150'>".$data['Time']."</td>";
-												$CourseFees = (is_numeric($data['CourseFees'])?"$".$data['CourseFees']:$data['CourseFees']);
-												echo "<td class='text-center'>".$CourseFees."</td>";
-												
-												$tcapacity=$data['TotalCapacity'];
-												$noofreg=$data['NoofUserRegistered'];
-												$status="";
-												 $cdate=date('m/d/Y');
-												$ssdate=strtotime($ssdate);
-												$eedate=strtotime($eedate);
-												$cdate=strtotime($cdate);
-												
-												if($cdate>=$ssdate && $cdate<=$eedate && $tcapacity!=$noofreg ){
-													$status="Current  ";
-												}else if($cdate<$eedate){
-													$status="Upcoming";
-												}
-												else if($cdate>$eedate){
-													$status="Previous";
-												}
-												
-												echo "<td class='text-center'>".$status."</td>";
-												
-												echo "<td class='text-center'><a href='registration.php?cid=".$data['CourseID']."' title='View'><i class='fa fa-eye'></i></a></td>";
-												 
-												echo "</tr>";    
-												 
-												}
-											}else{
-												echo "<tr><td colspan='7'>No Course Available</td></tr>"; 
-											}	 
-												
-												
-												 
-												// receive  value(value sent  using query string )
-
-											?>
-                                                                                        </tbody>
-											</table>
-										</div>										
-										<div><?php //displayPaginationBelow($setLimit,$page); ?></div>
-									</section>
-								</article>
-							</div>
-  </div>  -->
-</div></div>
+                
+    </div>
+</div>
 	<?php
 		
 			include('footer.php');

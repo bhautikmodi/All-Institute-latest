@@ -547,12 +547,12 @@ input.address
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="firstname">First name</label>
                               <br>
-                              <input maxlength="100" pattern="[a-zA-Z`~!@#$%^&*()',./?|\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
+                              <input maxlength="100" pattern="[a-zA-Z\-\s]+" name="firstname" placeholder="What's your first name?" class="firstname form-control" 
 							  id="firstname" type="text" required oninvalid="this.setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="lastname">Last name</label>
-                              <input maxlength="100" pattern="[a-zA-Z`~!@#$%^&*()',./?|\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
+                              <input maxlength="100" pattern="[a-zA-Z\-\s]+"  name="lastname" placeholder="What's your last name?" class="lastname form-control add" id="lastname" type="text" required oninvalid="this.setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')">
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="email">Email</label>
@@ -568,10 +568,9 @@ input.address
                             </div>
                             <div class="form-group col-md-6">
                               <label class="sr-only" for="pass">Password</label>
-							    <div data-toggle="tooltip" data-placement="top" data-html="true" title="Minimum 8 character password, Must contain at least one number, uppercase, lowercase letter and special character">
+							    <div data-toggle="tooltip" data-placement="top" data-html="true" title="Minimum 8 character password, Must contain at least one number, uppercase, lowercase letter and special characters like @#$%">
 								  <input name="pass" placeholder="Type secure password" class="form-control"
-								  id="pass" type="password" required oninvalid="this.setCustomValidity('Please enter your valid password')" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,30})" maxlength="30" oninput="setCustomValidity('')"
-								  >
+								  id="pass" type="password" required oninvalid="this.setCustomValidity('Please enter your valid password')" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,30})" maxlength="30" oninput="setCustomValidity('')">
 								</div>
                             </div>
                             <div class="form-group col-md-6">
