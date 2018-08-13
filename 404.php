@@ -1,5 +1,5 @@
 <?php
-include( "admin/connect.php" );
+include("admin/connect.php" );
 session_start();
 $MODE=MODE;
 include_once "allfunction.php";
@@ -11,7 +11,7 @@ include_once "allfunction.php";
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-	<title>ALL-Institute | Home page</title>
+	<title>ALL-Institute | Error page</title>
 	<link rel="apple-touch-icon" href="image/favicon-apple.png">
 	<link rel="icon" href="image/favicon.png">
 	<link rel="pingback" href="http://tritraining.edu.au/xmlrpc.php">

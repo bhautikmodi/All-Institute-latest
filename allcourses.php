@@ -1,4 +1,7 @@
 <?php 
+
+
+
 include("admin/connect.php");
 session_start();
 $MODE=MODE;
@@ -1062,9 +1065,9 @@ $(document).ready(function() {
     } );
 } );
 */
-$(".about-the-quickfacts").stick_in_parent({
-    offset_top: 70
-});
+// $(".about-the-quickfacts").stick_in_parent({
+//     offset_top: 70
+// });
 </script>
 
 <!-- Preloader Start Here -->

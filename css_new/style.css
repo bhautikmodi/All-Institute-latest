@@ -1506,22 +1506,24 @@ h2.sidebar-title:before {
   background: transparent;
   color: #002147;
 }
-.owl-controls .owl-nav {
+.owl-theme .owl-nav {
   position: absolute;
   top: -88px;
   right: -2px;
 }
 @media only screen and (max-width: 991px) {
-  .owl-controls .owl-nav {
+  .owl-theme .owl-nav {
     top: -77px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .owl-controls .owl-nav {
+  .owl-theme .owl-nav {
     position: inherit;
+    top: -145px !important;
+	right: 0px !important;
   }
 }
-.owl-controls i {
+.owl-theme i {
   margin-left: 0;
   color: #ffffff;
   display: block;
@@ -1532,7 +1534,7 @@ h2.sidebar-title:before {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.owl-controls .owl-prev {
+.owl-theme .owl-prev {
   border: 1px solid #c4161c;
   background: #c4161c!important;
   opacity: 1!important;
@@ -1549,7 +1551,7 @@ h2.sidebar-title:before {
   transition: all 0.3s ease-out;
 }
 @media only screen and (max-width: 480px) {
-  .owl-controls .owl-prev {
+  .owl-theme .owl-prev {
     left: -15px;
     top: 25%;
     transform: translateY(-50%);
@@ -1560,7 +1562,7 @@ h2.sidebar-title:before {
     position: absolute;
   }
 }
-.owl-controls .owl-prev:hover {
+.owl-theme .owl-prev:hover {
   background: #000 !important;
   border: 1px solid #002147;
   -webkit-transition: all 0.3s ease-out;
@@ -1569,10 +1571,10 @@ h2.sidebar-title:before {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.owl-controls .owl-prev:hover i {
+.owl-theme .owl-prev:hover i {
   color: #ffffff;
 }
-.owl-controls .owl-next {
+.owl-theme .owl-next {
   border: 1px solid #c4161c;
   right: -45px;
   background: #c4161c !important;
@@ -1590,7 +1592,7 @@ h2.sidebar-title:before {
   transition: all 0.3s ease-out;
 }
 @media only screen and (max-width: 480px) {
-  .owl-controls .owl-next {
+  .owl-theme .owl-next {
     right: -20px;
     top: 25%;
     transform: translateY(-50%);
@@ -1601,7 +1603,7 @@ h2.sidebar-title:before {
     position: absolute;
   }
 }
-.owl-controls .owl-next:hover {
+.owl-theme .owl-next:hover {
   background: #000 !important;
   border: 1px solid #002147;
   -webkit-transition: all 0.3s ease-out;
@@ -1610,7 +1612,7 @@ h2.sidebar-title:before {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-.owl-controls .owl-next:hover i {
+.owl-theme .owl-next:hover i {
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -3715,13 +3717,13 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
   display: inline;
   color: #ffca28;
 }
-.students-say-area .owl-controls .owl-nav {
+.students-say-area .owl-theme .owl-nav {
   margin-top: 0;
 }
-.students-say-area .owl-controls .owl-dots {
+.students-say-area .owl-theme .owl-dots {
   margin-top: 40px;
 }
-.students-say-area .owl-controls .owl-dots .owl-dot span {
+.students-say-area .owl-theme .owl-dots .owl-dot span {
   margin: 3px;
   width: 20px;
   height: 8px;
@@ -3734,10 +3736,10 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-.students-say-area .owl-controls .owl-dots .owl-dot:hover span {
+.students-say-area .owl-theme .owl-dots .owl-dot:hover span {
   background: #002147;
 }
-.students-say-area .owl-controls .owl-dots .active span {
+.students-say-area .owl-theme .owl-dots .active span {
   background: #002147;
 }
 /*=======================================================================
@@ -6238,7 +6240,7 @@ ul.course-feature2 li:before {
   text-transform: capitalize;
   text-align:left;
 }
-.related-courses-carousel .owl-controls .owl-nav {
+.related-courses-carousel .owl-theme .owl-nav {
   top: -74px;
   right: 25px;
 }

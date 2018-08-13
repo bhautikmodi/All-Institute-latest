@@ -56,8 +56,8 @@ $datainstructor=mysql_fetch_array($instructordata);
 <!-- <link rel="stylesheet" href="css/font-awesome.min.css">
 <link type="text/css" media="screen" rel="stylesheet" href="css/awwwards.css" />
 <link type="text/css" media="screen" rel="stylesheet" href="css/fastfonts.css" /> -->
-<script type='text/javascript'  src="js/jquery-2.1.1.min.js"></script>
 <!-- <script src="js_new/bootstrap.min.js" type="text/javascript"></script> -->
+<script type='text/javascript'  src="js/jquery-2.1.1.min.js"></script>
 
 <link rel="stylesheet" href="css_new/all_ins.css">	
 	 <!-- Normalize CSS -->
@@ -387,14 +387,14 @@ h3.sidebar-title
 				</div>
 			</div>
 		</header>
-          <div id="content">
-    <div id="inner-content" class="cf">
-              <div id="main" class="m-all t-all d-all cf" role="main">
-        <!--<div class="section-white page-slider home-page-slider hom inner_banner_height">
-                  <div class="parallax1" > </div>
-                </div>-->
-	  <div class="section-white section-one">
-								<article class="cf wrap post-410 team type-team status-publish has-post-thumbnail hentry profile-category-manager" role="article">
+		<div id="content">
+			<div id="inner-content" class="cf">
+				<div id="main" class="m-all t-all d-all cf" role="main">
+				<!--<div class="section-white page-slider home-page-slider hom inner_banner_height">
+						<div class="parallax1" > </div>
+					</div>-->
+					<div class="section-white section-one">
+						<article class="cf wrap post-410 team type-team status-publish has-post-thumbnail hentry profile-category-manager" role="article">
 								<br>
 
 									<header class="article-header wow fadeInUp">
@@ -413,7 +413,8 @@ h3.sidebar-title
 												<b>You are logged in successfully.</b> <br><?php echo $emailpass ?>
 										</div>
 									</div>
-	</div>						
+						</article>
+					</div>						
 								
 									
         <div class="courses-page-area5">
@@ -627,7 +628,7 @@ h3.sidebar-title
                                                     <ul>
                                                         <li>
                                                             <div class="skilled-lecturers-img col-md-3 col-sm-4 col-xs-4">
-                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
+                                                                <a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><img src="admin/upload/instructor/<?php  echo $datainstructor1['InsImg'];?>" class="img-responsive" alt="skilled"></a>
                                                             </div>
                                                             <div class="skilled-lecturers-content col-md-6 col-sm-8 col-xs-8">
                                                                 <h4><a href="instructor.php?InsId=<?php echo $datainstructor1['InsId']; ?>" target="_blank"><?php  echo $datainstructor1['InsName'];?></a></h4>
@@ -675,25 +676,31 @@ h3.sidebar-title
                         <div class="related-courses-title-area">
                             <h3>Other Courses You Might Be Interested</h3>
                         </div>
+						
                         <div id="shadow-carousel" class="related-courses-carousel">
-                            <div class="rc-carousel" data-loop="true" data-items="3" data-margin="15" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="1" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
-							
-							<?php
+						<?php
 							$date=date('Y-m-d');											
 							$cnd=" AND EnrStartDate > '$date' ";
-							
+
 							$cnd2= " AND '$date' BETWEEN  EnrStartDate AND EndDate ";
 											
-					   //   $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND (EnrStartDate <= '$date' OR ('$date' BETWEEN  EnrStartDate AND EndDate)) order by StartDate ");
-					   $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND ((EnrStartDate IS NULL and '$date' < EndDate) or ('$date' BETWEEN EnrStartDate AND EndDate)) order by StartDate ");
+							//   $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND (EnrStartDate <= '$date' OR ('$date' BETWEEN  EnrStartDate AND EndDate)) order by StartDate ");
+							$res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND ((EnrStartDate IS NULL and '$date' < EndDate) or ('$date' BETWEEN EnrStartDate AND EndDate)) order by StartDate ");
 							$noofrec=mysql_num_rows($res);
+							
+						?>
+					<div class="owl-carousel owl-theme rc-carousel" data-loop="false" data-items="3" data-margin="8" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="1" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+                            
+							
+								
+							<?php
 							if($noofrec>0)
 							{	
 								while($data1=mysql_fetch_array($res))
 								{
 //print_r($data);
 ?>
-                                <div class="courses-box1">
+                                <div class="item courses-box1">
                                     <div class="single-item-wrapper">
                                        	<div class="courses-img-wrapper hvr-bounce-to-bottom">
 								  
@@ -792,7 +799,7 @@ h3.sidebar-title
 						}else
 						{?>
 					
-							<div class="container">
+							 <div class="container">
 									<div class="row">
 											<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
 												<div class="courses-box1">
@@ -800,11 +807,11 @@ h3.sidebar-title
 														<div class="nocourse" >
 															<center class="nocourse2">No courses are available.</center>
 														</div>
+													</div>
 												</div>
 											</div>
-										</div>
 									</div>
-								</div>
+							</div>
                       
                     
                         <?php 
@@ -813,10 +820,10 @@ h3.sidebar-title
 							   
 							   
                             </div>
-                        </div>
-						
+                        </div>	
 						
                     </div>
+					<!-- sidebar start -->
 					 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                        	<?php include("admin/connect.php"); 
 						
@@ -885,10 +892,10 @@ if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AG
       <iframe width="100%" height="150" src="<?php echo 'https://www.youtube.com/embed/'.$data2['Video'];?>" frameborder="0" allowfullscreen></iframe>
 <?php  }  ?>
                                       
-									   <div>
-									</a>	   
 									   </div>
-									</div>
+									</a>	   
+									  
+									
 									<?php 
 								   }
 								   else
@@ -1529,14 +1536,11 @@ setTimeout(function() {
 
 
                         </div>
+						<!-- sidebar end -->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Courses Page 5 Area End Here -->
-        <!-- Footer Area Start Here -->
-       
-        <!-- Footer Area End Here -->
     </div>
 									
 									
@@ -1559,7 +1563,7 @@ setTimeout(function() {
 <script type='text/javascript'  src="js/jquery-2.1.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script> 
- <script type="text/javascript">
+<script type="text/javascript">
 
 
 $('#mega-menu ul li a').on('click',function(){
@@ -1579,12 +1583,12 @@ $('#mobile-nav-button').on('click',function(){
 <script type='text/javascript' src='js/wow.min.js'></script> 
 <script type='text/javascript' src='js/scripts.min.js'></script> 
 <script type='text/javascript' src='js/jquery.sticky-kit.js'></script>  -->
-<script>
+<!-- <script>
 $(".about-the-quickfacts").stick_in_parent({
     offset_top: 70
 });
 
-</script>
+</script> -->
 
 <!-- Preloader Start Here -->
     <div id="preloader"></div>
@@ -1602,14 +1606,15 @@ $(".about-the-quickfacts").stick_in_parent({
 								$("#Update_Modal").modal('show');
 								});
 
-								</script>
+	</script>
     <!-- WOW JS -->
     <script src="js_new/wow.min.js"></script>
     <!-- Nivo slider js -->
     <!-- <script src="vendor/slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
     <script src="vendor/slider/home.js" type="text/javascript"></script> -->
+	
     <!-- Owl Cauosel JS -->
-    <script src="vendor/OwlCarousel/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="vendor/OwlCarousel/owl.carousel.js" type="text/javascript"></script>
     <!-- Meanmenu Js -->
     <script src="js_new/jquery.meanmenu.min.js" type="text/javascript"></script>
     <!-- Srollup js -->
@@ -1632,7 +1637,36 @@ $(".about-the-quickfacts").stick_in_parent({
     <!-- Custom Js -->
 <script src="js_new/main.js" type="text/javascript"></script> 
  
-
-
+ <!-- <script>
+ $(function() {
+  $(window).on('load', function() {
+    $('.owl-carousel').owlCarousel({autoWidth: true, autoHeight: true})
+  })
+})
+ </script> -->
+<script>
+	$('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
+</script>
+ <script>
+ </script>
 </body>
 </html>

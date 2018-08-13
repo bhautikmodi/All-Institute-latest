@@ -30,7 +30,7 @@ if($webstatus=="production"){
 	define('USERNAME', 'noreply.allinstitute@gmail.com');
 	define('USERPASSWORD', '@ere1234');
 	define('SETFROM', 'noreply.allinstitute@gmail.com');
-	define('SETTO', 'mitesh.patel@theopeneyes.in');
+	define('SETTO', 'pooja.patel@theopeneyes.com');
 	define('MODE','locmode');
 }else if($webstatus=="developement"){
 	define('DBHOST', 'DevAERECourses.db.11797364.2d8.hostedresource.net');

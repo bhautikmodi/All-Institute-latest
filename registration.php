@@ -68,7 +68,10 @@ $FROMNAME=FROMNAME;
 
 $res=mysql_query("SELECT * FROM tblcourse Where CourseID = '".$_REQUEST['cid']."'");
 $data=mysql_fetch_array($res);
-
+if($data['CourseID']=='')
+{
+	echo "<script>window.location='404.php';</script>";
+}
 $cid=$_REQUEST['cid'];
 
 
@@ -101,13 +104,13 @@ $cid=$_REQUEST['cid'];
 <!-- Font-awesome CSS-->
 <link rel="stylesheet" href="css_new/font-awesome.min.css">
 <!-- Owl Caousel CSS -->
-<link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css">
-<link rel="stylesheet" href="vendor/OwlCarousel/owl.theme.default.min.css">
-<!-- Main Menu CSS -->
+    <link rel="stylesheet" href="vendor/OwlCarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendor/OwlCarousel/owl.theme.default.min.css">
+    <!-- Main Menu CSS -->
 <!-- <link rel="stylesheet" href="css_new/meanmenu.min.css"> -->
 <!-- nivo slider CSS -->
-<link rel="stylesheet" href="vendor/slider/css/nivo-slider.css" type="text/css" />
-<link rel="stylesheet" href="vendor/slider/css/preview.css" type="text/css" media="screen" />
+<!-- <link rel="stylesheet" href="vendor/slider/css/nivo-slider.css" type="text/css" /> -->
+<!-- <link rel="stylesheet" href="vendor/slider/css/preview.css" type="text/css" media="screen" /> -->
 <!-- Datetime Picker Style CSS -->
 <link rel="stylesheet" href="css_new/jquery.datetimepicker.css">
 <!-- Magic popup CSS -->
@@ -631,74 +634,81 @@ input.address
           <div class="related-courses-title-area">
             <h3>Other Courses You Might Be Interested</h3>
           </div>
-          <div id="shadow-carousel" class="related-courses-carousel">
-            <div class="rc-carousel" data-loop="true" data-items="3" data-margin="15" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="1" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
-              <?php
-$date=date('Y-m-d');											
+
+				<div id="shadow-carousel" class="related-courses-carousel">
+						<?php
+							$date=date('Y-m-d');											
 							$cnd=" AND EnrStartDate > '$date' ";
-							
+
 							$cnd2= " AND '$date' BETWEEN  EnrStartDate AND EndDate ";
 											
-			             // $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND (EnrStartDate <= '$date' OR '$date' BETWEEN  EnrStartDate AND EndDate) order by StartDate ");
-									 $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND ((EnrStartDate IS NULL and '$date' < EndDate) or ('$date' BETWEEN EnrStartDate AND EndDate)) order by StartDate ");
-			$noofrec=mysql_num_rows($res);
-						if($noofrec>0)
-						{
-							while($data=mysql_fetch_array($res))
-							{
+							//   $res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND (EnrStartDate <= '$date' OR ('$date' BETWEEN  EnrStartDate AND EndDate)) order by StartDate ");
+							$res=mysql_query("SELECT * FROM tblcourse Where CourseID!='$cid' and IsStatus = 1 AND ((EnrStartDate IS NULL and '$date' < EndDate) or ('$date' BETWEEN EnrStartDate AND EndDate)) order by StartDate ");
+							$noofrec=mysql_num_rows($res);
+							
+						?>
+					<div class="owl-carousel owl-theme rc-carousel" data-loop="false" data-items="3" data-margin="8" data-autoplay="false" data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="2" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="1" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="2" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false">
+                            
+							
+								
+							<?php
+							if($noofrec>0)
+							{	
+								while($data1=mysql_fetch_array($res))
+								{
 //print_r($data);
 ?>
-              <div class="courses-box1">
-                <div class="single-item-wrapper">
-                  <div class="courses-img-wrapper hvr-bounce-to-right">
-				  
-                     <img src="admin/upload/<?php echo $data['Image'];?>" class="wrapperimg"
+                                <div class="item courses-box1">
+                                    <div class="single-item-wrapper">
+                                       	<div class="courses-img-wrapper hvr-bounce-to-bottom">
+								  
+                                    <img src="admin/upload/<?php echo $data1['Image'];?>" class="wrapperimg" 
 									alt="">
 									
 									<div class="wrapperdiv">
                                      <h class="wrapperh">
-								 <center class="wrapperi"></center> </h>
+									 <center class="wrapperi"></center> </h>
 									</div>
 						<div class="wrapperj">
 								<?php //echo $data['Title'];?>
 						</div>
-									<a href="detail.php?cid=<?php echo $data['CourseID'];?>"><i class="logo" aria-hidden="true"></i>
+									<a href="detail.php?cid=<?php echo $data1['CourseID'];?>"><i class="logo" aria-hidden="true"></i>
 										<div class="wrapperk">Click for</div>
 										<div class="wrapperl">detail</div>
 									</a>
-
-					</div>
-                  <div class="courses-content-wrapper">
-				  
-					 <ul class="courses-info">
+										
+                                </div>
+                                        <div class="courses-content-wrapper">
+                                            
+                                    <ul class="courses-info">
 									   
                                        <li>
 											
                                            
-											<?php echo $data['Title'];?><br>
+											<?php echo $data1['Title'];?><br>
 											
 											</li>
                                        
 										</ul>
-                    <ul class="courses-info smallfonts four_block">
+										<ul class="courses-info smallfonts four_block">
 
 										<li class="smfont"><?php
-													if($data['EnrStartDate']!='')
+													if($data1['EnrStartDate']!='')
 												 {
 														 //  echo $data['StartDate'];
 														 
-									   $endDate = date('m/d/Y', strtotime($data['EnrStartDate']));  
+									   $strDate = date('m/d/Y', strtotime($data1['EnrStartDate']));  
 									   
-									   echo  $endDate. '&nbsp;&nbsp;-&nbsp;';
+									   echo  $strDate. '&nbsp;&nbsp;-&nbsp;';
 												 }else{echo "N/A";}
 													?>
 												
 												<?php
-													if($data['EnrEndDate']!='')
+													if($data1['EnrEndDate']!='')
 												 {
 														 //  echo $data['StartDate'];
 														 
-									   $endDate = date('m/d/Y', strtotime($data['EnrEndDate']));  
+									   $endDate = date('m/d/Y', strtotime($data1['EnrEndDate']));  
 									   
 									   echo  $endDate;
 												 }
@@ -711,63 +721,66 @@ $date=date('Y-m-d');
 										   
 										   ?>
 										   <?php
-													if($data['StartDate']!='')
+													if($data1['StartDate']!='')
 												 {
 														 //  echo $data['StartDate'];
 														 
-									   $endDate = date('m/d/Y', strtotime($data['StartDate']));  
+									   $endDate = date('m/d/Y', strtotime($data1['StartDate']));  
 									   
 									   echo  $endDate;
 												 }else{echo "N/A";}
 													?>
 												<br><span> <b> Course Date </b></span></li>
 																					</ul>
-		
-												
-		
-												<ul class="courses-info smallfonts four_block">
-												<li class="smfont"><?php $D=date("h:i a", strtotime($data['StartTime']));echo $D; ?> - <?php $E=date("h:i a", strtotime($data['EndTime']));echo $E; ?>
-													<br><span> <b>Time</b></span></li>
-												
-												<li class="smfont"><?php  $noofuserreg=$data['NoofUserRegistered'];	
-																	$totcap=$data['TotalCapacity'];
-																	$setave=$totcap-$noofuserreg; 
-																	if($setave!=''){ echo $setave;}else{echo  "N/A";}?>
-													<br><span>  <b> Seats </b></span></li>
-											
-												
-												</ul>
 
+	
 
-                  </div>
-                </div>
-              </div>
-              <?php
+	<ul class="courses-info smallfonts four_block">
+	<li class="smfont"><?php $D=date("h:i a", strtotime($data1['StartTime']));echo $D; ?> - <?php $E=date("h:i a", strtotime($data1['EndTime']));echo $E; ?>
+		<br><span> <b>Time</b></span></li>
+	
+	<li class="smfont"><?php  $noofuserreg=$data1['NoofUserRegistered'];	
+						$totcap=$data1['TotalCapacity'];
+						$setave=$totcap-$noofuserreg; 
+						if($setave!=''){ echo $setave;}else{echo  "N/A";}?>
+		<br><span>  <b> Seats </b></span></li>
+
+	
+	</ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                        <?php
 							}
-					}else
+						}else
 						{?>
 					
-						<div class="container">
-							<div class="row">
-									<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-										<div class="courses-box1">
-											<div class="single-item-wrapper">
-												<div class="nocourse" >
-													<center class="nocourse2">No courses are available.</center>
+							 <div class="container">
+									<div class="row">
+											<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+												<div class="courses-box1">
+													<div class="single-item-wrapper">
+														<div class="nocourse" >
+															<center class="nocourse2">No courses are available.</center>
+														</div>
+													</div>
 												</div>
-										</div>
+											</div>
 									</div>
-								</div>
 							</div>
-						</div>
                       
                     
                         <?php 
 						}
-						?>
-						
-            </div>
-          </div>
+						?>						
+							   
+							   
+                            </div>
+                        </div>	
+
+		  
         </div>
 		
 		
@@ -1270,10 +1283,10 @@ $setave=$totcap-$noofuserreg;
 <!-- <script type='text/javascript' src='js/wow.min.js'></script>  -->
 <!-- <script type='text/javascript' src='js/scripts.min.js'></script> 
 <script type='text/javascript' src='js/jquery.sticky-kit.js'></script>  -->
-<script>
+<!-- <script>
 $(".about-the-quickfacts").stick_in_parent({
     offset_top: 70
-});
+}); -->
 
 </script> 
 
@@ -1289,10 +1302,10 @@ $(".about-the-quickfacts").stick_in_parent({
 <!-- WOW JS --> 
 <script src="js_new/wow.min.js"></script> 
 <!-- Nivo slider js --> 
-<script src="vendor/slider/js/jquery.nivo.slider.js" type="text/javascript"></script> 
-<script src="vendor/slider/home.js" type="text/javascript"></script> 
-<!-- Owl Cauosel JS --> 
-<script src="vendor/OwlCarousel/owl.carousel.min.js" type="text/javascript"></script> 
+<!-- <script src="vendor/slider/js/jquery.nivo.slider.js" type="text/javascript"></script>  -->
+<!-- <script src="vendor/slider/home.js" type="text/javascript"></script>  -->
+    <!-- Owl Cauosel JS -->
+    <script src="vendor/OwlCarousel/owl.carousel.js" type="text/javascript"></script>
 <!-- Meanmenu Js --> 
 <script src="js_new/jquery.meanmenu.min.js" type="text/javascript"></script> 
 <!-- Srollup js --> 
@@ -1329,6 +1342,28 @@ function validatePassword(){
 }
 pass.onchange = validatePassword;
 confpass.onkeyup = validatePassword;
+</script>
+<script>
+	$('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:3,
+            nav:false
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+    }
+})
 </script>
 </body>
 </html>
